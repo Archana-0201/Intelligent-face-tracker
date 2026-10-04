@@ -1,0 +1,49 @@
+{
+  "video": {
+    "source": "data/sample_video1.mp4",
+    "rtsp_url": "",
+    "use_rtsp": false,
+    "display_output": true,
+    "output_video": "output/output_tracked.mp4",
+    "save_output_video": true
+  },
+  "detection": {
+    "model_path": "models/yolov8n-face.pt",
+    "confidence_threshold": 0.25,
+    "iou_threshold": 0.45,
+    "frame_skip": 2,
+    "input_size": 1280
+  },
+  "recognition": {
+    "model_name": "buffalo_sc",
+    "similarity_threshold": 0.45,
+    "embedding_size": 512,
+    "min_face_size": 30
+  },
+  "tracking": {
+    "max_disappeared": 30,
+    "max_distance": 0.6,
+    "iou_threshold": 0.3,
+    "kalman_enabled": true
+  },
+  "database": {
+    "type": "sqlite",
+    "path": "data/face_tracker.db"
+  },
+  "logging": {
+    "log_file": "logs/events.log",
+    "log_level": "INFO",
+    "image_format": "jpg",
+    "image_quality": 90
+  },
+  "ui": {
+    "show_fps": true,
+    "show_face_id": true,
+    "show_bbox": true,
+    "show_landmarks": false,
+    "show_visitor_count": true,
+    "bbox_color_new": [0, 255, 0],
+    "bbox_color_known": [255, 165, 0],
+    "font_scale": 0.6
+  }
+}
